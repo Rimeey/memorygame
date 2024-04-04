@@ -1,0 +1,37 @@
+.statistics {
+    background-color: #1e1e1e;
+    user-select: none;
+
+    .elements {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 15px;
+
+        .moves,
+        .timer {
+            padding: 7.5px;
+            border-radius: 15px;
+            background-color: #000;
+            color: #fff;
+
+            font: {
+                size: 24px;
+                family: Verdana, monospace, sans-serif;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .statistics {
+        .elements {
+
+            .moves,
+            .timer {
+                font-size: 14px;
+            }
+        }
+    }
+}

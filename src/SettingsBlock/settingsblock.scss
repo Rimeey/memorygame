@@ -1,0 +1,67 @@
+.settings {
+    background-color: #1e1e1e;
+    user-select: none;
+    display: flex;
+    justify-content: space-around;
+
+    .playgroundsize,
+    .design {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+
+        .size_playground,
+        .color {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 45%;
+            height: 20%;
+        }
+
+        .button {
+            background-color: #000;
+            color: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            cursor: pointer;
+
+            font: {
+                size: 18px;
+                family: Verdana, monospace, sans-serif;
+            }
+
+            text-align: center;
+            user-select: none;
+
+            &:hover {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+
+        .button-light {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .settings {
+
+        .playgroundsize,
+        .design {
+            gap: 5px;
+
+            .size_playground,
+            .color {
+                width: 45%;
+                height: 20%;
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+#root {
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
