@@ -3,6 +3,7 @@ import OneCard from './OneCard';
 import allPics from '../AllPic';
 import { useContext } from 'react';
 import { Memory } from '../Context.js';
+import StartgameBlock from '../StartgameBlock/StartgameBlock.jsx';
 
 export default function PlaygroundBlock() {
 
@@ -12,9 +13,12 @@ export default function PlaygroundBlock() {
 
     return (
         <div className='playground'>
-            {shuffledImages.slice(0, setting_size.count).map((imageUrl, index) => (
-                <OneCard url={imageUrl} key={index}></OneCard>
-            ))}
+            <div className='cards'>
+                {shuffledImages.slice(0, setting_size.count).map((imageUrl, index) => (
+                    <OneCard url={imageUrl} key={index}></OneCard>
+                ))}
+            </div>
+            <StartgameBlock></StartgameBlock>
         </div>
     );
 }

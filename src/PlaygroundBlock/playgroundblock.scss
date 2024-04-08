@@ -1,19 +1,21 @@
 .playground {
-    background-color: #2a2a2a;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-    padding: 1% 0;
-
-    .card {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-
-        img {
-            border-radius: 4px;
+    position: relative;
+    .cards {
+        background-color: #2a2a2a;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 1% 0;
+        .card {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+    
+            img {
+                border-radius: 4px;
+            }
         }
     }
 }
