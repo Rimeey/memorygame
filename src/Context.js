@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const Memory = createContext();
 
@@ -35,11 +35,11 @@ export const Context = ({ children }) => {
         button_style(e.target);
 
         const buttonSettings = {
-            '4x3': { count: 12, width: '24%' },
-            '4x4': { count: 16, width: '21%' },
-            '5x4': { count: 20, width: '19%' },
-            '6x5': { count: 30, width: '16%' },
-            '6x6': { count: 36, width: '14%' }
+            '4x3': { count: 12, width: '24.2%' },
+            '4x4': { count: 16, width: '24.2%' },
+            '5x4': { count: 20, width: '19.2%' },
+            '6x5': { count: 30, width: '15.86%' },
+            '6x6': { count: 36, width: '15.86%' }
         };
 
         const settings = buttonSettings[e.target.textContent];
@@ -47,7 +47,6 @@ export const Context = ({ children }) => {
             setSetting_size(settings);
             setPlay(false);
             setMoves(0);
-            setTimer(0);
             setOverlay('block');
         }
     }
@@ -58,24 +57,6 @@ export const Context = ({ children }) => {
 
     // Timer
 
-    const [timer, setTimer] = useState(0);
-
-    useEffect(() => {
-        if (play) {
-            const seconds = setInterval(() => {
-                setTimer(timer => timer + 1);
-            }, 1000);
-            return () => {
-                clearInterval(seconds);
-            };
-        }
-    }, [play])
-
-    const clear_timer = (seconds) => {
-        const sign = seconds < 0 ? "-" : "";
-        return sign + new Date(Math.abs(seconds) * 1000).toISOString().substr(11, 8);
-    };
-
     function handle_timer() {
         setOverlay('none')
         setPlay(true);
@@ -83,8 +64,8 @@ export const Context = ({ children }) => {
 
     const value = {
         shuffleArray,
+        handle_timer,
         handle_click_size, setting_size, setSetting_size,
-        timer, setTimer, clear_timer, handle_timer,
         moves, setMoves,
         play, setPlay,
         overlay, setOverlay

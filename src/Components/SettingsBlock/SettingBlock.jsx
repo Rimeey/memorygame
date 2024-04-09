@@ -1,6 +1,6 @@
 import './settingsblock.scss';
 import { useContext } from 'react';
-import { Memory } from '../Context';
+import { Memory } from '../../Context';
 
 export default function SettingsBlock() {
 

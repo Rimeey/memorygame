@@ -1,8 +1,8 @@
 import './playgroundblock.scss';
-import OneCard from './OneCard';
-import allPics from '../AllPic';
+import OneCard from './OneCard.jsx';
+import allPics from '../../AllPic.js';
 import { useContext } from 'react';
-import { Memory } from '../Context.js';
+import { Memory } from '../../Context.js';
 import StartgameBlock from '../StartgameBlock/StartgameBlock.jsx';
 
 export default function PlaygroundBlock() {
