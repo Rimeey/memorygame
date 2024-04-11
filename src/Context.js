@@ -8,7 +8,12 @@ export const Context = ({ children }) => {
 
     const [moves, setMoves] = useState(0);
 
-    // Cards generate
+    function increment_moves() {
+        setMoves(moves => moves + 1);
+        console.log(moves);
+    }
+
+    // Shuffle
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -46,7 +51,6 @@ export const Context = ({ children }) => {
         if (settings) {
             setSetting_size(settings);
             setPlay(false);
-            setMoves(0);
             setOverlay('block');
         }
     }
@@ -65,10 +69,10 @@ export const Context = ({ children }) => {
     const value = {
         shuffleArray,
         handle_timer,
+        increment_moves,
         handle_click_size, setting_size, setSetting_size,
-        moves, setMoves,
         play, setPlay,
-        overlay, setOverlay
+        overlay, setOverlay,
     };
 
     return (

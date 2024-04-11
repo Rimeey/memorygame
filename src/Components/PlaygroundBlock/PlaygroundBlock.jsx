@@ -7,9 +7,10 @@ import StartgameBlock from '../StartgameBlock/StartgameBlock.jsx';
 
 export default function PlaygroundBlock() {
 
-    const { shuffleArray, setting_size } = useContext(Memory);
+    const { setting_size, shuffleArray } = useContext(Memory);
 
-    const shuffledImages = shuffleArray(shuffleArray(allPics).flatMap(image => [image, image]));
+    const unuqieImages = shuffleArray(allPics).slice(0, (setting_size.count/2));
+    const shuffledImages = shuffleArray(unuqieImages.flatMap(image => [image, image]));
 
     return (
         <div className='playground'>
