@@ -7,9 +7,14 @@ export default function OneCard({ url }) {
     const [isOpen, setIsOpen] = useState(false);
 
     function handleClick() {
-        if(!isOpen) {
+        if(!isOpen && moves < 2) {
             setIsOpen(true);
             setMoves(moves + 1);
+        } else if(moves > 0) {
+            setMoves(0);
+            setTimeout(() => {
+                console.log('2 карточки закрылись');
+            }, 1000);
         }
     }
 
