@@ -10,7 +10,6 @@ export default function OneCard({ url }) {
         if(!isOpen) {
             setIsOpen(true);
             setMoves(moves + 1);
-            console.log(moves);
         }
     }
 

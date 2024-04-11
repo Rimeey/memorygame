@@ -23,17 +23,17 @@ export const Context = ({ children }) => {
 
     // Setting size
 
-    const [setting_size, setSetting_size] = useState({ count: 12, width: "24%" });
+    const [setting_size, setSetting_size] = useState({ count: 6, width: "24.2%" });
 
     function handle_click_size(e) {
         button_style(e.target);
 
         const buttonSettings = {
-            '4x3': { count: 12, width: '24.2%' },
-            '4x4': { count: 16, width: '24.2%' },
-            '5x4': { count: 20, width: '19.2%' },
-            '6x5': { count: 30, width: '15.86%' },
-            '6x6': { count: 36, width: '15.86%' }
+            '4x3': { count: 6, width: '24.2%' },
+            '4x4': { count: 8, width: '24.2%' },
+            '5x4': { count: 10, width: '19.2%' },
+            '6x5': { count: 15, width: '15.86%' },
+            '6x6': { count: 18, width: '15.86%' }
         };
 
         const settings = buttonSettings[e.target.textContent];
