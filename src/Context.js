@@ -8,20 +8,9 @@ export const Context = ({ children }) => {
 
     const [moves, setMoves] = useState(0);
 
-    function increment_moves() {
-        setMoves(moves => moves + 1);
-        console.log(moves);
-    }
-
     // Shuffle
 
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
+
 
     // Click buttons
 
@@ -67,12 +56,12 @@ export const Context = ({ children }) => {
     }
 
     const value = {
-        shuffleArray,
+        // shuffleArray,
         handle_timer,
-        increment_moves,
         handle_click_size, setting_size, setSetting_size,
         play, setPlay,
         overlay, setOverlay,
+        moves, setMoves
     };
 
     return (

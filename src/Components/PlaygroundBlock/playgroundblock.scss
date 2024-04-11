@@ -12,6 +12,7 @@
             position: relative;
             display: inline-block;
             overflow: hidden;
+            user-select: none;
             img {
                 border-radius: 4px;
                 width: 100%;
