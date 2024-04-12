@@ -45,6 +45,7 @@ export const Context = ({ children }) => {
             setSetting_size(settings);
             setPlay(false);
             setOverlay('block');
+            setAllMoves(0);
         }
     }
 
