@@ -6,11 +6,15 @@ export const Context = ({ children }) => {
 
     const [play, setPlay] = useState(false);
 
+    // URLS
+
+    const [link, setLink] = useState({});
+
+    // Moves
+
     const [moves, setMoves] = useState(0);
 
-    // Shuffle
-
-
+    const [allMoves, setAllMoves] = useState(0);
 
     // Click buttons
 
@@ -61,7 +65,9 @@ export const Context = ({ children }) => {
         handle_click_size, setting_size, setSetting_size,
         play, setPlay,
         overlay, setOverlay,
-        moves, setMoves
+        moves, setMoves,
+        allMoves, setAllMoves,
+        link, setLink
     };
 
     return (

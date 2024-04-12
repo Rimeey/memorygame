@@ -5,7 +5,7 @@ import useTimer from '../../Hooks/useTimer';
 
 export default function StatisticsBlock() {
 
-    const { moves, play } = useContext(Memory);
+    const { allMoves, play } = useContext(Memory);
 
     const {timer, setTimer, clear_timer } = useTimer();
 
@@ -25,7 +25,7 @@ export default function StatisticsBlock() {
     return (
         <div className="statistics">
             <div className="elements">
-                <div className="moves">Moves: {moves}</div>
+                <div className="moves">Moves: {allMoves}</div>
                 <div className="timer">{clear_timer(timer)}</div>
             </div>
         </div>
