@@ -24,7 +24,7 @@ export default function PlaygroundCards({ setting }) {
     return (
         <div className='cards'>
             {shuffledImages.map((imageUrl, index) => (
-                <OneCard url={imageUrl} key={index} />
+                <OneCard url={imageUrl} key={index} index={index} />
             ))}
         </div>
     );

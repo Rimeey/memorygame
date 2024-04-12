@@ -8,7 +8,7 @@ export const Context = ({ children }) => {
 
     // URLS
 
-    const [link, setLink] = useState({});
+    const [link, setLink] = useState([]);
 
     // Moves
 
