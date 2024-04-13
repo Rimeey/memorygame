@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { Memory } from "../../Context";
 
 export default function OneCard({ url, index }) {
-    const { setting_size, moves, setMoves, allMoves, setAllMoves, link, setLink, openedCards, setOpenedCards } = useContext(Memory);
+    const { setting_size, moves, setMoves, allMoves, setAllMoves, link, setLink, openedCards, setOpenedCards, to_default } = useContext(Memory);
 
     const isOpen = openedCards.includes(index);
 
@@ -11,24 +11,34 @@ export default function OneCard({ url, index }) {
             setMoves(moves + 1);
             setLink([...link, { url, index }]);
             setOpenedCards([...openedCards, index]);
+            if(openedCards.length === (setting_size.count * 2)-1) {
+                setTimeout(() => {
+                    to_default();
+                }, 500);
+            }
         }
     }
 
     useEffect(() => {
+
+        function matched_cards() {
+            if (link.length === 2) {
+                const [firstCard, secondCard] = link;
+                if (firstCard.url !== secondCard.url) {
+                    setOpenedCards(openedCards.filter(cardIndex => ![firstCard.index, secondCard.index].includes(cardIndex)));
+                }
+                setLink([]);
+            }
+        }
+
         if (moves > 1) {
             setTimeout(() => {
                 setMoves(0);
                 setAllMoves(allMoves + 1);
-                if (link.length === 2) {
-                    const [firstCard, secondCard] = link;
-                    if (firstCard.url !== secondCard.url) {
-                        setOpenedCards(openedCards.filter(cardIndex => ![firstCard.index, secondCard.index].includes(cardIndex)));
-                    }
-                    setLink([]);
-                }
+                matched_cards()
             }, 500);
         }
-    }, [moves, allMoves, link, setMoves, setAllMoves, setLink, openedCards, setOpenedCards]);
+    }, [allMoves, setAllMoves, link, setLink, moves, setMoves, openedCards, setOpenedCards]);
 
     return (
         <div id={index} className={`card ${isOpen ? 'open' : ''}`} style={{ width: setting_size.width }} onClick={handleClick}>

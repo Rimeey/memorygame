@@ -43,9 +43,7 @@ export const Context = ({ children }) => {
         const settings = buttonSettings[e.target.textContent];
         if (settings) {
             setSetting_size(settings);
-            setPlay(false);
-            setOverlay('block');
-            setAllMoves(0);
+            to_default();
         }
     }
 
@@ -53,11 +51,19 @@ export const Context = ({ children }) => {
 
     const [overlay, setOverlay] = useState('block');
 
+    function to_default() {
+        setPlay(false);
+        setOverlay('block');
+        setOpenedCards([]);
+        setAllMoves(0);
+    }
+
     // Timer
 
     function handle_timer() {
         setOverlay('none')
         setPlay(true);
+        setAllMoves(0);
     }
 
     // Opened cards
@@ -65,6 +71,7 @@ export const Context = ({ children }) => {
     const [openedCards, setOpenedCards] = useState([]);
 
     const value = {
+        to_default,
         handle_timer,
         handle_click_size, setting_size, setSetting_size,
         play, setPlay,
