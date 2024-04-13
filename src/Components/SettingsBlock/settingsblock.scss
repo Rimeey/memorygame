@@ -7,6 +7,21 @@
     gap: 20px;
     padding: 15px;
 
+    .settings_element {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+
+        .setting {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 15%;
+            height: 5%;
+        }
+    }
+
     h2 {
         color: #fff;
         font: {
@@ -15,70 +30,45 @@
         }
     }
 
-    .playgroundsize,
-    .design,
-    .sounds {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 15px;
+    .button {
+        background-color: #fff;
+        color: #000;
+        border-radius: 15px;
+        padding: 15px;
+        cursor: pointer;
 
-        .size_playground,
-        .color,
-        .sound_setting {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 15%;
-            height: 5%;
+        font: {
+            size: 18px;
+            family: Verdana, monospace, sans-serif;
         }
 
-        .button {
-            background-color: #fff;
-            color: #000;
-            border-radius: 15px;
-            padding: 15px;
-            cursor: pointer;
+        text-align: center;
+        user-select: none;
 
-            font: {
-                size: 18px;
-                family: Verdana, monospace, sans-serif;
-            }
-
-            text-align: center;
-            user-select: none;
-
-            &:hover {
-                background-color: #000;
-                color: #fff;
-            }
-        }
-
-        .dark {
+        &:hover {
             background-color: #000;
             color: #fff;
         }
-        .light {
-            background-color: #fff;
-            color: #000;
-        }
+    }
+
+    .dark {
+        background-color: #000;
+        color: #fff;
+    }
+    .light {
+        background-color: #fff;
+        color: #000;
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:520px) {
     .settings {
-        .playgroundsize,
-        .design,
-        .sounds {
-            gap: 5px;
-
-            .size_playground,
-            .color,
-            .sound_setting {
+        .settings_element {
+            .setting {
                 width: 45%;
                 height: 20%;
                 font-size: 14px;
-                padding: 10px;
+                padding: 5px;
             }
         }
     }

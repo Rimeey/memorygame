@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { Memory } from "../../Context";
 
 export default function OneCard({ url, index }) {
-    const { setting_size, moves, setMoves, allMoves, setAllMoves, link, setLink, openedCards, setOpenedCards, to_default, play_sound } = useContext(Memory);
+    const { setting_size, setting_speed, moves, setMoves, allMoves, setAllMoves, link, setLink, openedCards, setOpenedCards, to_default, play_sound } = useContext(Memory);
 
     const isOpen = openedCards.includes(index);
 
@@ -40,9 +40,9 @@ export default function OneCard({ url, index }) {
                 setMoves(0);
                 setAllMoves(allMoves + 1);
                 matched_cards()
-            }, 500);
+            }, setting_speed);
         }
-    }, [allMoves, setAllMoves, link, setLink, moves, setMoves, openedCards, setOpenedCards]);
+    }, [allMoves, setAllMoves, link, setLink, moves, setMoves, openedCards, setOpenedCards, setting_speed]);
 
     return (
         <div id={index} className={`card ${isOpen ? 'open' : ''}`} style={{ width: setting_size.width }} onClick={handleClick}>

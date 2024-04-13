@@ -25,7 +25,7 @@ export default function StatisticsBlock() {
     return (
         <div className="statistics">
             <div className="elements">
-                <div className="moves">Moves: {allMoves}</div>
+                <div className="moves">Turns: {allMoves}</div>
                 <div className="timer">{clear_timer(timer)}</div>
             </div>
         </div>

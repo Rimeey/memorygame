@@ -11,6 +11,9 @@
         .timer {
             padding: 7.5px;
             color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            margin: 5px;
             font: {
                 size: 24px;
                 family: Verdana, monospace, sans-serif;
@@ -25,7 +28,7 @@
 
             .moves,
             .timer {
-                font-size: 14px;
+                font-size: 18px;
             }
         }
     }

@@ -27,17 +27,17 @@ export const Context = ({ children }) => {
 
     // Settings
 
-    const [setting_size, setSetting_size] = useState({ count: 6, width: "24.2%" });
+    const [setting_size, setSetting_size] = useState({ count: 6, width: "23%" });
 
     function handle_click_size(e) {
         button_style(e.target);
 
         const buttonSettings = {
-            '4x3': { count: 6, width: '24.2%' },
-            '4x4': { count: 8, width: '24.2%' },
-            '5x4': { count: 10, width: '19.2%' },
-            '6x5': { count: 15, width: '15.86%' },
-            '6x6': { count: 18, width: '15.86%' }
+            '4x3': { count: 6, width: '23%' },
+            '4x4': { count: 8, width: '23%' },
+            '5x4': { count: 10, width: '18.5%' },
+            '6x5': { count: 15, width: '15.5%' },
+            '6x6': { count: 18, width: '15.5%' }
         };
 
         const settings = buttonSettings[e.target.textContent];
@@ -51,10 +51,27 @@ export const Context = ({ children }) => {
 
     function handle_click_sound(e) {
         button_style(e.target);
-        if(e.target.textContent === 'ON') {
+        if(e.target.textContent === 'On') {
             setSetting_sound(true);
         } else {
             setSetting_sound(false);
+        }
+    }
+
+    const [setting_speed, setSetting_speed] = useState(500);
+
+    function handle_click_speed(e) {
+        button_style(e.target);
+
+        const buttonSettings = {
+            'Fast': 500,
+            'Standart': 1000,
+            'Slow': 1500
+        };
+
+        const settings = buttonSettings[e.target.textContent];
+        if (settings) {
+            setSetting_speed(settings);
         }
     }
 
@@ -95,8 +112,9 @@ export const Context = ({ children }) => {
         to_default,
         handle_timer,
         play_sound,
-        handle_click_size, setting_size, setSetting_size,
+        setting_size, setSetting_size, handle_click_size,
         setting_sound, setSetting_sound, handle_click_sound,
+        setting_speed, setSetting_speed, handle_click_speed,
         play, setPlay,
         overlay, setOverlay,
         moves, setMoves,

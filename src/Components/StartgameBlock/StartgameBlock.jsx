@@ -8,7 +8,7 @@ export default function StartgameBlock() {
 
     return (
         <div className="overlay" style={{ display: overlay }}>
-            <div className='start' onClick={() => handle_timer()}>START</div>
+            <div className='start' onClick={() => handle_timer()}><p>START</p></div>
         </div>
     );
 }
