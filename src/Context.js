@@ -25,25 +25,36 @@ export const Context = ({ children }) => {
         button.classList.add('button-light');
     }
 
-    // Setting size
+    // Settings
 
-    const [setting_size, setSetting_size] = useState({ count: 6, width: "24.2%" });
+    const [setting_size, setSetting_size] = useState({ count: 6, width: "23%" });
 
     function handle_click_size(e) {
         button_style(e.target);
 
         const buttonSettings = {
-            '4x3': { count: 6, width: '24.2%' },
-            '4x4': { count: 8, width: '24.2%' },
-            '5x4': { count: 10, width: '19.2%' },
-            '6x5': { count: 15, width: '15.86%' },
-            '6x6': { count: 18, width: '15.86%' }
+            '4x3': { count: 6, width: '23%' },
+            '4x4': { count: 8, width: '23%' },
+            '5x4': { count: 10, width: '18.2%' },
+            '6x5': { count: 15, width: '14.86%' },
+            '6x6': { count: 18, width: '14.86%' }
         };
 
         const settings = buttonSettings[e.target.textContent];
         if (settings) {
             setSetting_size(settings);
             to_default();
+        }
+    }
+
+    const [setting_sound, setSetting_sound] = useState(true);
+
+    function handle_click_sound(e) {
+        button_style(e.target);
+        if(e.target.textContent === 'ON') {
+            setSetting_sound(true);
+        } else {
+            setSetting_sound(false);
         }
     }
 
@@ -70,10 +81,22 @@ export const Context = ({ children }) => {
 
     const [openedCards, setOpenedCards] = useState([]);
 
+    // sounds
+
+    function play_sound(text) {
+        if(setting_sound) {
+            const sound = new Audio(`./sounds/${text}.mp3`);
+            sound.volume = 0.1;
+            sound.play();
+        }
+    }
+
     const value = {
         to_default,
         handle_timer,
+        play_sound,
         handle_click_size, setting_size, setSetting_size,
+        setting_sound, setSetting_sound, handle_click_sound,
         play, setPlay,
         overlay, setOverlay,
         moves, setMoves,

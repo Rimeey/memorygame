@@ -2,22 +2,26 @@
     background-color: #1e1e1e;
     user-select: none;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
 
     .playgroundsize,
-    .design {
+    .design,
+    .sounds {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 15px;
 
         .size_playground,
-        .color {
+        .color,
+        .sound_setting {
             display: flex;
             flex-direction: column;
             justify-content: center;
             width: 45%;
             height: 20%;
+            max-width: 100px;
         }
 
         .button {
@@ -48,15 +52,17 @@
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:768px) {
     .settings {
-
+        flex-direction: column;
         .playgroundsize,
-        .design {
+        .design,
+        .sounds {
             gap: 5px;
 
             .size_playground,
-            .color {
+            .color,
+            .sound_setting {
                 width: 45%;
                 height: 20%;
                 font-size: 14px;

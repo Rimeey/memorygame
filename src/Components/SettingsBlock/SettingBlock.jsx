@@ -4,7 +4,7 @@ import { Memory } from '../../Context';
 
 export default function SettingsBlock() {
 
-    const {handle_click_size} = useContext(Memory);
+    const { handle_click_size, handle_click_sound} = useContext(Memory);
 
     return (
         <div className="settings">
@@ -18,6 +18,10 @@ export default function SettingsBlock() {
             <div className="design">
                 <div className="color button button-light">Dark</div>
                 <div className="color button">Light</div>
+            </div>
+            <div className="sounds">
+                <div className="sound_setting button button-light" onClick={(e) => handle_click_sound(e)}>ON</div>
+                <div className="sound_setting button" onClick={(e) => handle_click_sound(e)}>OFF</div>
             </div>
         </div>
     );

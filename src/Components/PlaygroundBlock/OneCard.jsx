@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { Memory } from "../../Context";
 
 export default function OneCard({ url, index }) {
-    const { setting_size, moves, setMoves, allMoves, setAllMoves, link, setLink, openedCards, setOpenedCards, to_default } = useContext(Memory);
+    const { setting_size, moves, setMoves, allMoves, setAllMoves, link, setLink, openedCards, setOpenedCards, to_default, play_sound } = useContext(Memory);
 
     const isOpen = openedCards.includes(index);
 
@@ -11,10 +11,11 @@ export default function OneCard({ url, index }) {
             setMoves(moves + 1);
             setLink([...link, { url, index }]);
             setOpenedCards([...openedCards, index]);
-            if(openedCards.length === (setting_size.count * 2)-1) {
+            if (openedCards.length === (setting_size.count * 2) - 1) {
                 setTimeout(() => {
                     to_default();
-                }, 500);
+                    play_sound('win');
+                }, 1000);
             }
         }
     }
@@ -26,6 +27,9 @@ export default function OneCard({ url, index }) {
                 const [firstCard, secondCard] = link;
                 if (firstCard.url !== secondCard.url) {
                     setOpenedCards(openedCards.filter(cardIndex => ![firstCard.index, secondCard.index].includes(cardIndex)));
+                    play_sound('no');
+                } else {
+                    play_sound('yes');
                 }
                 setLink([]);
             }
