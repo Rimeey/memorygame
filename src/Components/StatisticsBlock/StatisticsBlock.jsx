@@ -2,6 +2,8 @@ import './statisticsblock.scss';
 import { useContext, useEffect } from 'react';
 import { Memory } from '../../Context';
 import useTimer from '../../Hooks/useTimer';
+import { IoIosTimer } from "react-icons/io";
+import { PiArrowsCounterClockwiseBold } from "react-icons/pi";
 
 export default function StatisticsBlock() {
 
@@ -25,8 +27,8 @@ export default function StatisticsBlock() {
     return (
         <div className="statistics">
             <div className="elements">
-                <div className="moves">Turns: {allMoves}</div>
-                <div className="timer">{clear_timer(timer)}</div>
+                <div className="element"><PiArrowsCounterClockwiseBold />Turns: {allMoves}</div>
+                <div className="element"><IoIosTimer/>{clear_timer(timer)}</div>
             </div>
         </div>
     );
