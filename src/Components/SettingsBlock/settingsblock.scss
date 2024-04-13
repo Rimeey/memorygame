@@ -31,10 +31,10 @@
     }
 
     .button {
-        background-color: #fff;
+        background-color: #cecece;
         color: #000;
-        border-radius: 15px;
-        padding: 15px;
+        border-radius: 10px;
+        padding: 10px 15px;
         cursor: pointer;
 
         font: {
@@ -47,16 +47,16 @@
 
         &:hover {
             background-color: #000;
-            color: #fff;
+            color: #cecece;
         }
     }
 
     .dark {
         background-color: #000;
-        color: #fff;
+        color: #cecece;
     }
     .light {
-        background-color: #fff;
+        background-color: #cecece;
         color: #000;
     }
 }
