@@ -20,24 +20,24 @@ export const Context = ({ children }) => {
 
     function button_style(button) {
         for (const child of button.parentNode.childNodes) {
-            child.classList.remove('button-light');
+            child.classList.remove('dark');
         }
-        button.classList.add('button-light');
+        button.classList.add('dark');
     }
 
     // Settings
 
-    const [setting_size, setSetting_size] = useState({ count: 6, width: "23%" });
+    const [setting_size, setSetting_size] = useState({ count: 6, width: "24.2%" });
 
     function handle_click_size(e) {
         button_style(e.target);
 
         const buttonSettings = {
-            '4x3': { count: 6, width: '23%' },
-            '4x4': { count: 8, width: '23%' },
-            '5x4': { count: 10, width: '18.2%' },
-            '6x5': { count: 15, width: '14.86%' },
-            '6x6': { count: 18, width: '14.86%' }
+            '4x3': { count: 6, width: '24.2%' },
+            '4x4': { count: 8, width: '24.2%' },
+            '5x4': { count: 10, width: '19.2%' },
+            '6x5': { count: 15, width: '15.86%' },
+            '6x6': { count: 18, width: '15.86%' }
         };
 
         const settings = buttonSettings[e.target.textContent];

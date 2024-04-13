@@ -2,8 +2,18 @@
     background-color: #1e1e1e;
     user-select: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
+    gap: 20px;
+    padding: 15px;
+
+    h2 {
+        color: #fff;
+        font: {
+            size: 18px;
+            family: Verdana, monospace, sans-serif;
+        }
+    }
 
     .playgroundsize,
     .design,
@@ -19,14 +29,13 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 45%;
-            height: 20%;
-            max-width: 100px;
+            width: 15%;
+            height: 5%;
         }
 
         .button {
-            background-color: #000;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
             border-radius: 15px;
             padding: 15px;
             cursor: pointer;
@@ -40,12 +49,16 @@
             user-select: none;
 
             &:hover {
-                background-color: #fff;
-                color: #000;
+                background-color: #000;
+                color: #fff;
             }
         }
 
-        .button-light {
+        .dark {
+            background-color: #000;
+            color: #fff;
+        }
+        .light {
             background-color: #fff;
             color: #000;
         }
@@ -54,7 +67,6 @@
 
 @media screen and (max-width:768px) {
     .settings {
-        flex-direction: column;
         .playgroundsize,
         .design,
         .sounds {
