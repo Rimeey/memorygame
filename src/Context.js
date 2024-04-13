@@ -60,15 +60,19 @@ export const Context = ({ children }) => {
         setPlay(true);
     }
 
+    // Opened cards
+
+    const [openedCards, setOpenedCards] = useState([]);
+
     const value = {
-        // shuffleArray,
         handle_timer,
         handle_click_size, setting_size, setSetting_size,
         play, setPlay,
         overlay, setOverlay,
         moves, setMoves,
         allMoves, setAllMoves,
-        link, setLink
+        link, setLink,
+        openedCards, setOpenedCards
     };
 
     return (
