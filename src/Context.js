@@ -120,7 +120,7 @@ export const Context = ({ children }) => {
     function play_sound(text) {
         if(setting_sound) {
             const sound = new Audio(`./sounds/${text}.mp3`);
-            sound.volume = 0.1;
+            sound.volume = 0.05;
             sound.play();
         }
     }

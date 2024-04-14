@@ -14,7 +14,6 @@ export default function OneCard({ url, index }) {
             if (openedCards.length === (setting_size.count * 2) - 1) {
                 setTimeout(() => {
                     to_default();
-                    play_sound('win');
                 }, 1000);
             }
         }
