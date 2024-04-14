@@ -5,7 +5,9 @@ export const Memory = createContext();
 
 export const Context = ({ children }) => {
 
-    const { theme, setTheme } = useTheme();
+    // Other
+
+    const { setTheme } = useTheme();
 
     const [play, setPlay] = useState(false);
 
@@ -54,7 +56,7 @@ export const Context = ({ children }) => {
 
         /// sound
 
-    const [setting_sound, setSetting_sound] = useState(true);
+    const [setting_sound, setSetting_sound] = useState(false);
 
     function handle_click_sound(e) {
         button_style(e.target);
