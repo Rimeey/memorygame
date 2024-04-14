@@ -32,7 +32,7 @@ export const Context = ({ children }) => {
 
     // Settings
 
-        /// size
+    /// size
 
     const [setting_size, setSetting_size] = useState({ count: 6, width: "23%" });
 
@@ -54,20 +54,20 @@ export const Context = ({ children }) => {
         }
     }
 
-        /// sound
+    /// sound
 
     const [setting_sound, setSetting_sound] = useState(false);
 
     function handle_click_sound(e) {
         button_style(e.target);
-        if(e.target.textContent === 'On') {
+        if (e.target.textContent === 'On') {
             setSetting_sound(true);
         } else {
             setSetting_sound(false);
         }
     }
 
-        /// speed
+    /// speed
 
     const [setting_speed, setSetting_speed] = useState(500);
 
@@ -86,8 +86,8 @@ export const Context = ({ children }) => {
         }
     }
 
-        /// theme
-    
+    /// theme
+
     function handle_click_theme(e) {
         setTheme(e.target.textContent.toLowerCase());
     }
@@ -118,7 +118,7 @@ export const Context = ({ children }) => {
     // sounds
 
     function play_sound(text) {
-        if(setting_sound) {
+        if (setting_sound) {
             const sound = new Audio(`./sounds/${text}.mp3`);
             sound.volume = 0.05;
             sound.play();

@@ -9,7 +9,7 @@ export default function StatisticsBlock() {
 
     const { allMoves, play } = useContext(Memory);
 
-    const {timer, setTimer, clear_timer } = useTimer();
+    const { timer, setTimer, clear_timer } = useTimer();
 
     useEffect(() => {
         if (play) {
@@ -28,8 +28,8 @@ export default function StatisticsBlock() {
         <div className="statistics">
             <div className="elements">
                 <div className="element"><PiArrowsCounterClockwiseBold />Turns: {allMoves}</div>
-                <div className="element"><IoIosTimer/>{clear_timer(timer)}</div>
+                <div className="element"><IoIosTimer />{clear_timer(timer)}</div>
             </div>
         </div>
     );
-}  
+}

@@ -9,5 +9,5 @@ export const useTheme = () => {
         localStorage.setItem('theme', theme);
     }, [theme])
 
-    return {theme, setTheme};
+    return { theme, setTheme };
 }

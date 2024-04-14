@@ -10,7 +10,7 @@ export default function PlaygroundBlock() {
 
     return (
         <div className='playground'>
-            <PlaygroundCards setting = {setting_size.count}></PlaygroundCards>
+            <PlaygroundCards setting={setting_size.count}></PlaygroundCards>
             <StartgameBlock></StartgameBlock>
         </div>
     );

@@ -26,6 +26,7 @@
     h2 {
         color: var(--text-color);
         transition: color 200ms linear;
+
         font: {
             size: 18px;
             family: Verdana, monospace, sans-serif;
@@ -64,10 +65,12 @@
         background-color: #000;
         color: #fff;
     }
+
     .light {
         background-color: #fff;
         color: #000;
     }
+
     .blue {
         background-color: #004db2;
         color: #fff;
@@ -80,6 +83,7 @@
             justify-content: flex-start;
             gap: 15px;
         }
+
         .button {
             font-size: 14px;
             padding: 10px 7.5px;

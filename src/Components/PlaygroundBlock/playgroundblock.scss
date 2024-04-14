@@ -1,5 +1,6 @@
 .playground {
     position: relative;
+
     .cards {
         background-color: var(--playground-background-color);
         transition: background-color 200ms linear;
@@ -9,19 +10,23 @@
         justify-content: space-around;
         gap: 5px;
         padding: 1%;
+
         .card {
             position: relative;
             display: inline-block;
             overflow: hidden;
             user-select: none;
+
             img {
                 border-radius: 4px;
                 width: 100%;
                 height: auto;
             }
+
             .back {
                 display: none;
             }
+
             .front {
                 display: block;
             }
