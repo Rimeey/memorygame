@@ -1,5 +1,6 @@
 .statistics {
-    background-color: #1e1e1e;
+    background-color: var(--other-background-color);
+    transition: background-color 200ms linear;
     user-select: none;
 
     .elements {
@@ -9,8 +10,9 @@
 
         .element {
             padding: 7.5px;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.6);
+            color: var(--non-active-button-background-color);
+            background-color: var(--transparent-background-color);
+            transition: background-color 200ms linear, color 200ms linear;
             border-radius: 15px;
             margin: 5px;
             display: flex;

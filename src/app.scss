@@ -5,7 +5,8 @@
 }
 
 body {
-    background-color: #0a0a0a;
+    background-color: var(--background-color);
+    transition: background-color 200ms linear;
 }
 
 #root {
@@ -13,4 +14,24 @@ body {
     max-width: 900px;
     display: flex;
     flex-direction: column;
+}
+
+/* dark theme */
+
+html[data-theme='dark'] {
+    --background-color: #000000;
+    --playground-background-color: #2a2a2a;
+    --other-background-color: #1e1e1e;
+    --non-active-button-background-color: #cecece;
+    --transparent-background-color: #00000099;
+}
+
+/* light theme */
+
+html[data-theme='light'] {
+    --background-color: #ffffff;
+    --playground-background-color: #e2e2e2;
+    --other-background-color: #cecece;
+    --non-active-button-background-color: #222222;
+    --transparent-background-color: #cecece99;
 }

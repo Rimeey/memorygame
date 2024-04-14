@@ -1,8 +1,11 @@
 import { createContext, useState } from "react";
+import { useTheme } from './Hooks/useTheme';
 
 export const Memory = createContext();
 
 export const Context = ({ children }) => {
+
+    const { theme, setTheme } = useTheme();
 
     const [play, setPlay] = useState(false);
 
@@ -20,12 +23,14 @@ export const Context = ({ children }) => {
 
     function button_style(button) {
         for (const child of button.parentNode.childNodes) {
-            child.classList.remove('dark');
+            child.classList.remove('active');
         }
-        button.classList.add('dark');
+        button.classList.add('active');
     }
 
     // Settings
+
+        /// size
 
     const [setting_size, setSetting_size] = useState({ count: 6, width: "23%" });
 
@@ -47,6 +52,8 @@ export const Context = ({ children }) => {
         }
     }
 
+        /// sound
+
     const [setting_sound, setSetting_sound] = useState(true);
 
     function handle_click_sound(e) {
@@ -57,6 +64,8 @@ export const Context = ({ children }) => {
             setSetting_sound(false);
         }
     }
+
+        /// speed
 
     const [setting_speed, setSetting_speed] = useState(500);
 
@@ -73,6 +82,12 @@ export const Context = ({ children }) => {
         if (settings) {
             setSetting_speed(settings);
         }
+    }
+
+        /// theme
+    
+    function handle_click_theme(e) {
+        setTheme(e.target.textContent.toLowerCase());
     }
 
     // Overlay
@@ -115,6 +130,7 @@ export const Context = ({ children }) => {
         setting_size, setSetting_size, handle_click_size,
         setting_sound, setSetting_sound, handle_click_sound,
         setting_speed, setSetting_speed, handle_click_speed,
+        handle_click_theme,
         play, setPlay,
         overlay, setOverlay,
         moves, setMoves,
